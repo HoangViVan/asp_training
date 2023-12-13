@@ -106,7 +106,7 @@
                     </div>
                     <div class="button">
                     <asp:Button ID="btndangki" runat="server" Text="Đăng ký" OnClick="btndangki_Click" />
-
+                    <asp:Label ID="lblthongbao" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </div>
                 </div>
             </div>

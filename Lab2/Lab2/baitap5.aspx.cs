@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace Lab2
 {
@@ -38,14 +39,14 @@ namespace Lab2
             if (string.IsNullOrEmpty(sluong))
             {
                 lblthongbao.Text = "Chưa có số lượng";
-            }
-            else
+            }else if (Regex.IsMatch(sluong,@"^[0-9]+$"))
             {
+                
                 lbxbanhdat.Items.Add(mon + " ("+sluong+")");
                 lblthongbao.Text = "";
                 txtsoluong.Text = "";
             }
-            
+            else lblthongbao.Text = "Số lượng phải là số";
         }
 
         protected void btnxoa_Click(object sender, ImageClickEventArgs e)
@@ -56,7 +57,18 @@ namespace Lab2
 
         protected void btninhoadon_Click(object sender, EventArgs e)
         {
-            itenkhachhang.InnerText = txttenkhachhang.Text;
+            if (string.IsNullOrEmpty(txttenkhachhang.Text))
+            {
+                lblthongbao.Text = "Chưa nhập tên khách hàng";
+            }else if (string.IsNullOrEmpty(txtdiachi.Text))
+            {
+                lblthongbao.Text = "Chưa nhập địa chỉ";
+            }
+            else if(string.IsNullOrEmpty(txtmasothue.Text))
+            {
+                lblthongbao.Text = "Chưa nhập mã số thuế";
+            }
+                itenkhachhang.InnerText = txttenkhachhang.Text;
             idiachi.InnerText = txtdiachi.Text;
             imasothue.InnerText = txtmasothue.Text;
             

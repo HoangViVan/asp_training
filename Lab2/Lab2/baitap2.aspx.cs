@@ -17,6 +17,10 @@ namespace Lab2
         protected void lbndoiten_Click(object sender, EventArgs e)
         {
             string ten = txthotenb2.Text;
+            if (string.IsNullOrEmpty(ten))
+            {
+                lblthongbao.Text = "Chưa nhập họ tên";
+            }else
             lblcauchao.Text = "Chào bạn <b><i>" + ten + "</i></b> <br/> Chúc mừng bạn đã đến với môn học <b><i>Lập trình Web2 </i></b>";
         }
     }

@@ -51,9 +51,9 @@
         <div class="container">
             <div class ="top">
                 <li>Nhập họ tên</li>
-                <li>
+                <li style="display:flex;flex-direction:column;">
                     <asp:TextBox ID="txthotenb2" runat="server"></asp:TextBox>
-
+                    <asp:Label ID="lblthongbao" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </li>
                 <li>
                     <asp:LinkButton ID="lbndoiten" runat="server" OnClientClick="return confirm('Bạn có đồng ý thay đổi câu chào không?');" OnClick="lbndoiten_Click">Thay đổi câu chào</asp:LinkButton>
