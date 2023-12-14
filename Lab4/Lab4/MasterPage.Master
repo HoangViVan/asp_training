@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Lab4.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <style>
+            .container{
+                border:1px solid #000000;
+            }
+            .container .top{
+                border-bottom:1px solid #000000;
+                text-align:center;
+            }
+            .container .center{
+                display:flex;
+                height:250px;
+            }
+            .container .center .left{
+                width:30%;
+                border-right:1px solid #000000;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            }
+            .container .center .right{
+                width:70%;
+            }
+            .container .bottom{
+                border-top:1px solid #000000;
+                text-align:center;
+            }
+        </style>
+        <div class ="container">
+            <div class="top">
+                ASP.NET
+            </div>
+            <div class="center">
+                <div class="left">
+                    <asp:HyperLink ID="hpluscln" runat="server" NavigateUrl="~/baitap2.aspx">Tính USCLN(a,b)</asp:HyperLink>
+                    <asp:HyperLink ID="hpldangkithongtin" runat="server" NavigateUrl="~/baitap3.aspx">Đăng kí thông tin</asp:HyperLink>
+                </div>
+                <div class="right">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        ĐÂY LÀ TRANG CHỦ
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="bottom">Design by Vi Văn Hoàng</div>
+        </div>
+    </form>
+</body>
+</html>
