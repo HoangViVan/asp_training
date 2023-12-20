@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Lab6.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table border="1">
+                <tr>
+                    <td colspan="2" style="text-align:center">VI VĂN HOÀNG - CCN04.6B</td>
+                </tr>
+                <tr>
+                    <td style="width:300px">
+                        <div>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CapNhatMonHoc.aspx">Cập nhật Môn học</asp:HyperLink>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/TimKiemMonHoc.aspx">Tìm kiếm Môn học</asp:HyperLink>
+                        </div>
+                    </td>
+                    <td style="width:700px;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </form>
+</body>
+</html>
