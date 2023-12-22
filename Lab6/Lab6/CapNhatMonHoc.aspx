@@ -12,7 +12,7 @@
         <asp:TextBox ID="txttenmonhoc" runat="server"></asp:TextBox>
     </div>
     <div style="display:flex;justify-content:center;align-items:center;margin-top:10px;">
-        <asp:GridView ID="grvcnmh" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grvcnmh_SelectedIndexChanged" OnPageIndexChanging="grvcnmh_PageIndexChanging" PageIndex="3">
+        <asp:GridView ID="grvcnmh" runat="server" Width="300" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grvcnmh_SelectedIndexChanged" OnPageIndexChanging="grvcnmh_PageIndexChanging" PageIndex="3" AllowPaging="True" PageSize="3">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="MaMH" HeaderText="Mã môn học" />

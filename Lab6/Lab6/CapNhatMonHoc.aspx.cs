@@ -32,6 +32,21 @@ namespace Lab6
                 lblthongbao.Text = "Lỗi kết nối";
             }
         }
+        public Boolean Kiemtra(string KT)
+        {
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(KT,cn);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+            if (dataTable.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
         protected void grvcnmh_SelectedIndexChanged(object sender, EventArgs e)
         {
             string querykn = "select * from tbl_Monhoc";
@@ -59,9 +74,18 @@ namespace Lab6
 
         protected void btnluu_Click(object sender, EventArgs e)
         {
-            string query = "insert into tbl_Monhoc values ('" + txtmamonhoc.Text + "',N'" + txttenmonhoc.Text + "')";
-            ThucThi(query);
-            HienThi();
+            string kt = "select * from tbl_Monhoc where MaMH='"+txtmamonhoc.Text+"' or TenMH=N'"+txttenmonhoc.Text+"'";
+            if (Kiemtra(kt))
+            {
+                lblthongbao.Text = "Tên môn học đã tồn tại";
+            }
+            else
+            {
+                string query = "insert into tbl_Monhoc values ('" + txtmamonhoc.Text + "',N'" + txttenmonhoc.Text + "')";
+                ThucThi(query);
+                HienThi();
+            }
+            
         }
 
         protected void btnxoa_Click(object sender, EventArgs e)
