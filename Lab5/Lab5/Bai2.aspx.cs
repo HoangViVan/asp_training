@@ -17,6 +17,7 @@ namespace Lab5
         {
             HienThi();
         }
+
         void HienThi()
         {
             try
@@ -40,7 +41,22 @@ namespace Lab5
             cn.Close();
         }
         
-
+        public Boolean KiemTra(string caulenh)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(caulenh,cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            if(dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        
         protected void grvbangmonhoc_SelectedIndexChanged1(object sender, EventArgs e)
         {
             string chuoiSQl = "select * from tbl_Monhoc";
@@ -68,9 +84,18 @@ namespace Lab5
 
         protected void btnluu_Click(object sender, EventArgs e)
         {
-            string query = "insert into tbl_Monhoc values ('" + txtmamonhoc.Text + "',N'" + txttenmonhoc.Text + "')";
-            ThucThi(query);
-            HienThi();
+            string kiemtra = "select * from tbl_Monhoc where MaMH='"+txtmamonhoc.Text+"' or TenMH =N'"+txttenmonhoc.Text+"'";
+            if (KiemTra(kiemtra))
+            {
+                lblthongbao.Text = "Tên môn học đã tồn tại";
+            }
+            else
+            {
+                string query = "insert into tbl_Monhoc values ('" + txtmamonhoc.Text + "',N'" + txttenmonhoc.Text + "')";
+                ThucThi(query);
+                HienThi();
+            }
+            
         }
 
         protected void btnxoa_Click(object sender, EventArgs e)

@@ -66,7 +66,7 @@
                         <asp:TextBox ID="txttenmonhoc" runat="server"></asp:TextBox>
                     </div>
                     <div class="bang">
-                        <asp:GridView ID="grvbangmonhoc" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True"  HorizontalAlign="Center" OnSelectedIndexChanged="grvbangmonhoc_SelectedIndexChanged1" PageIndex="3" OnPageIndexChanging="grvbangmonhoc_PageIndexChanging" Height="123px">
+                        <asp:GridView ID="grvbangmonhoc" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True"  HorizontalAlign="Center" OnSelectedIndexChanged="grvbangmonhoc_SelectedIndexChanged1" PageIndex="3" OnPageIndexChanging="grvbangmonhoc_PageIndexChanging" Height="123px" PageSize="3">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
                                 <asp:BoundField HeaderText="Mã môn học" DataField="MaMH" />
